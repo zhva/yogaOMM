@@ -1,0 +1,115 @@
+
+:root {
+    --outer-circle-side: 50vw;
+    --inner-circle-side: 45vw;
+    --small-circle-side: 14px;
+    --inner_circle_pos: calc((var(--outer_circle_side) - var(--inner_circle_side)) / 2);
+    --main-accent-color: #7d5984;
+    --main-accent-color-tr: #7d598491;
+    --second-accent-color: #d5dcdc;
+    --second-accent-color-tr: #d5dcdc91;
+    --circle-shadow-inner-1: 0px 0px 0px 25px #fff inset;
+    --circle-shadow-inner-2: 0px 0px 0px 27px var(--main-accent-color) inset;
+    --circle-shadow-1: 0px 0px 0px 25px var(--second-accent-color);
+    --circle-shadow-2: 0px 0px 0px 26px var(--main-accent-color-tr);
+    --circle-shadow-3: 0px 0px 0px 55px var(--second-accent-color);
+    --circle-shadow-4: 0px 0px 0px 95px var(--second-accent-color-tr);
+  }
+/*TODO create variables im em for shadov width*/
+
+.outer-circle {
+    margin: 50px auto;
+    width: var(--outer-circle-side);
+    height: var(--outer-circle-side);
+    border-radius: 50%;
+    border: 1px solid var(--main-accent-color-tr);
+    position: relative;
+    box-shadow: var(--circle-shadow-inner-1),
+                var(--circle-shadow-inner-2),
+                var(--circle-shadow-1),
+                var(--circle-shadow-2),
+                var(--circle-shadow-3),
+                var(--circle-shadow-4);
+    animation-name: pulse;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes pulse {
+    0% 
+    {
+        box-shadow: var(--circle-shadow-inner-1),
+                    var(--circle-shadow-inner-2),
+                    var(--circle-shadow-1),
+                    var(--circle-shadow-2),
+                    var(--circle-shadow-3),
+                    var(--circle-shadow-4);
+    }
+    50%
+    {
+        box-shadow: var(--circle-shadow-inner-1),
+                    var(--circle-shadow-inner-2),
+                    var(--circle-shadow-1),
+                    var(--circle-shadow-2),
+                    var(--circle-shadow-3),
+                    0px 0px 0px 85px var(--second-accent-color-tr);
+    }
+    100%
+    {
+        box-shadow: var(--circle-shadow-inner-1),
+                    var(--circle-shadow-inner-2),
+                    var(--circle-shadow-1),
+                    var(--circle-shadow-2),
+                    var(--circle-shadow-3),
+                    var(--circle-shadow-4);
+    }
+}
+h1 {
+    transform: translate(17%, 150%);
+}
+
+.dots {
+    position: absolute;
+	width: var(--outer-circle-side);
+    height: var(--outer-circle-side);
+	transform-origin: center center;
+    animation-name: rot;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    top: 0;
+}
+.diff_anim_time {
+	animation-duration: 10s;
+}
+.dot1,
+.dot2 {
+	background-color: var(--main-accent-color);
+	width: var(--small-circle-side);
+	height: var(--small-circle-side);
+	border-radius: 50%;
+    position: absolute;
+    left: calc((var(--outer-circle-side) - var(--small-circle-side))/ 2)
+}
+.dot1 {
+    top: calc(0px - (25px + 1px + var(--small-circle-side) / 2));
+}
+.dot2 {
+    top: calc(calc(25px + 1px + var(--outer-circle-side) - var(--small-circle-side) / 2));
+}
+
+@keyframes rot {
+  0% 
+  {
+  	transform: rotate(0deg);
+  }
+  50%
+  {
+  	transform: rotate(180deg);
+  }
+  100%
+  {
+  	transform: rotate(360deg);
+  }
+}
