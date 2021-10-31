@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Yoga world</title>
+</head>
+<body onload="init()">
+    <div class="content-container">
+        <header>
+            <div class="logo-container">
+                <div class="logo-image"></div>
+                <p>Yoga.<span>OMM</span></p>
+            </div>
+            <div class="navigtion-container" id="navigationId">
+                <nav>
+                    <ul>
+                        <li class="home-icon"><span></span><a href="index.html">Home</a></li>
+                        <li class="yoga-icon"><span></span><a href="classes.html">Yoga classes</a></li>
+                        <li class="promo-icon"><span></span><a href="">Promo</a></li>
+                        <li class="online-icon"><span></span><a href="">Online classes</a></li>
+                        <li class="contact-icon"><span></span><a href="">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="classes-content-wrapper">
+                <div class="classes-content-heading">
+                    <h1><span>Meet our</span> yoga classes</h1>
+                </div>
+                <div class="classes-content">
+                    <div>
+                        <img src="./img/hatha_small.jpg" alt="Hatha">
+                        <h2>Hatha</h2>
+                        <p>Haṭha yoga is focusing particularly on asanas (the physical postures), which became popular
+                           throughout the world as a form of physical exercise. </p>
+                        <div class="classes-time">
+                            <p><span>Monday</span> 20:00 hs.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./img/ashtanga_small.jpg" alt="Ashtanga">
+                        <h2>Ashtanga</h2>
+                        <p>Ashtanga Vinyasa Yoga is a style of yoga as exercise popularized by K. Pattabhi Jois during 
+                           the 20th century, often promoted as a modern-day form of classical Indian yoga.</p>
+                        <div class="classes-time">
+                            <p><span>Tuesday</span> 18:00 hs.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./img/kundalini_small.jpg" alt="Kundalini">
+                        <h2>Kundalini</h2>
+                        <p>Kundalini yoga derives from kundalini, defined as the energy that lies dormant at the base 
+                           of the spine until it is activated and channeled upward through the chakras in the process of 
+                           spiritual perfection</p>
+                        <div class="classes-time">
+                            <p><span>Friday</span> 19:30 hs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="classes-content classes-content-hidden" id="moreClassesId">
+                    <div>
+                        <img src="./img/anusara_small.jpg" alt="Anusara">
+                        <h2>Anusara</h2>
+                        <p>Anusara Yoga is the successor of a modern school of hatha yoga founded by American-born yoga 
+                           teacher John Friend in 1997. It was derived from the Iyengar style of yoga and elements of Hindy 
+                           spirituality were reintroduced into a more health-oriented type of Yoga.</p>
+                        <div class="classes-time">
+                            <p><span>Monday</span> 20:00 hs.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./img/kripalu_small.jpg" alt="Kripalu">
+                        <h2>Kripalu</h2>
+                        <p>Kripalu Yoga is a form of Hatha Yoga that combines asanas, pranayama, and meditation. Kripalu 
+                           states that its teaching is "following the flow" of prana, or "life-force energy, compassionate 
+                           self-acceptance, and taking what is learned into daily life.</p>
+                        <div class="classes-time">
+                            <p><span>Wednsday</span> 18:00 hs.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="./img/bikram_small.jpg" alt="Bikram">
+                        <h2>Bikram</h2>
+                        <p>Bikram Yoga is a system of hot yoga, a type of yoga as exercise, devised by Bikram Choudhury. 
+                           Classes consist of a fixed sequence of 26 postures, practiced in a room heated to 41°C with a
+                           humidity of 40%, intended to replicate the climate of India</p>
+                        <div class="classes-time">
+                            <p><span>Sunday</span> 13:30 hs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="classes-button-container">
+                    <button class="button-style" id="btnShowMoreId" onclick="toggleBlockVisibility('moreClassesId', 'classes-content-hidden', 'classes-content-shown', 'btnShowMoreId')">Show more</button>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <small class="copyright">Design: <span>by Freepik</span> Development: <span>Viktoriia Zhuravel</span></small>
+                <div class="social-container">
+                    <a href="https://www.facebook.com"><img src="./img/iconmonstr-facebook-5.svg" alt="facebook"></a>
+                    <a href="https://www.instagram.com"><img src="./img/iconmonstr-instagram-15.svg" alt="instagram"></a>
+                    <a href="mailto:vzhuravel.mmt-b2021@fh-salzburg.ac.at"><img src="./img/iconmonstr-gmail-5.svg" alt="mail"></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="./js/toggleMenuState.js"></script>
+    <script src="./js/toggleBlockVisibility.js"></script>
+</body>
+</html>

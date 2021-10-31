@@ -95,7 +95,7 @@
     --index-background-image: url(../img/index_background.jpg);
     --logo-image: url(../img/logo_yoga_omm.svg);
 
-    --header-shadov-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    --header-shadov-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
   }
 /*TODO create variables im em for shadov width*/
 
@@ -460,7 +460,109 @@ footer {
     margin: 0.5em 0em;
 }
 /*------------------------------footer end--------------------------------------*/
+/*------------------------------index end---------------------------------------*/
 
+
+/*----------------------------classes start-------------------------------------*/
+.classes-content-wrapper {
+    background: var(--header-shadov-gradient);
+    margin: 0 auto;
+    padding: 0 5%;
+
+    display: flex;
+    flex-direction: column;
+}
+.classes-content-heading {
+    align-self: center;
+    padding: 0.8em 0;
+
+    width: 100%;
+
+    background-image: url(../img/classes-h1-background.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+
+    
+}
+.classes-content-heading h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 0;
+
+    font-size: 1em;
+}
+.classes-content-heading span {
+    font-family: var(--main-font-family);
+    font-weight: 500;
+    display: block;
+}
+.classes-content {
+    flex-flow: row wrap;
+    display: flex;
+    justify-content: space-around;
+
+    margin-bottom: 2em;
+}
+
+.classes-content > div {
+    width: 30rem;
+
+    display: flex;
+    flex-direction: column;
+}
+.classes-content h2 {
+    text-align: left;
+    font-size: 1.2em;
+}
+.classes-content img {
+    border-radius: 50%;
+    align-self: center;
+}
+.classes-content p {
+    text-align: left;
+}
+.classes-time {
+    border-top: 1px solid;
+
+    align-self: center;
+    margin-top: auto;
+
+    width: inherit;
+}
+.classes-time span {
+    font-family: var(--accent-font-family);
+}
+.classes-button-container {
+    align-self: center;
+    margin: 2em;
+}
+.button-style {
+    background-color: var(--main-accent-color);
+
+    font-family: var(--accent-font-family);
+    color: white;
+    text-transform: uppercase;
+
+    border-radius: 1em;
+    padding: 0.5em 2em;
+    border: 0;
+}
+.classes-content-hidden {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s ease;
+}
+.classes-content-shown {
+    max-height: 125em;
+    overflow: hidden;
+    transition: 0.5s ease;
+}
+.button-style:hover {
+    background-color: var(--main-accent-color-hover);
+}
+/*-----------------------------classes end--------------------------------------*/
+/*--------------------------media screen end------------------------------------*/
 @media screen and (min-width: 600px) {
 
     .outer-circle {
@@ -544,5 +646,32 @@ footer {
     .main-bottom-text h2 {
         font-size: 1.6875em;
     }
+/*------------------------------index end---------------------------------------*/
+
+/*----------------------------classes start-------------------------------------*/
+    .classes-content {
+        flex-direction: row;
+    }
+    .classes-content-heading {
+        font-size: 1.2em;
+
+        padding: 1.2em 0;
+    }
+    .classes-content > div {
+        width: 25rem;
+    }
+/*----------------------------classes end---------------------------------------*/
+  }
+  @media screen and (min-width: 1024px) {
+/*----------------------------classes start-------------------------------------*/
+    .classes-content-heading {
+        font-size: 2em;
+
+        padding: 1.5em 0;
+    }
+    .classes-content > div {
+        width: 20rem;
+    }
+/*----------------------------classes end---------------------------------------*/
 
   }
