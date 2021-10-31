@@ -4,44 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/circlesDraving.js"></script>
     <title>Yoga world</title>
 </head>
-<body onload="draw();">
+<body onload="init()">
     <div class="content-container">
         <header>
             <div class="logo-container">
-                <img src="" alt="Yoga OMM logo">
+                <div class="logo-image"></div>
+                <p>Yoga.<span>OMM</span></p>
             </div>
-            <div class="navigtion-container">
+            <div class="navigtion-container" id="navigationId">
                 <nav>
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">Yoga classes</a></li>
-                        <li><a href="">Promo</a></li>
-                        <li><a href="">Online classes</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li class="home-icon"><span></span><a href="">Home</a></li>
+                        <li class="yoga-icon"><span></span><a href="">Yoga classes</a></li>
+                        <li class="promo-icon"><span></span><a href="">Promo</a></li>
+                        <li class="online-icon"><span></span><a href="">Online classes</a></li>
+                        <li class="contact-icon"><span></span><a href="">Contact</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
         <main>
-            <div class="outer-circle">
-                <div class="">
-                    <h1>Healthy & Fresh <span>Yoga</span></h1>
+            <div class="content-wrapper">
+                <div class="outer-circle">
+                    <div class="circle-content">
+                        
+                        <h1>Healthy & Fresh <span>Yoga</span></h1>
+                        <p>A tool to reveal the true self and feel united with your mind and body</p>
+                        <div class="logo-image"></div>
+                    </div>
+    
+                    <div class="dots diff_anim_time">
+                        <div class="dot1"></div>
+                    </div>
+                    <div class="dots">
+                        <div class="dot2"></div>
+                    </div>
                 </div>
-                <div class="dots diff_anim_time">
-                    <div class="dot1"></div>
+            </div>
+            <div class="main-bottom-content">
+                <div class="main-bottom-text">
+                    <h2>Join us!</h2>
+                    <p>We are a young team but already experienced and dedicated one. If you would like to gain some new experiences 
+                        and develop your body flexibility, expand your knowlegde about the best yoga practises or learn how to 
+                        appropriately relax all your body you should definitely join our classes. <span>You won't regret it we promise you!</span></p>
                 </div>
-                <div class="dots">
-                    <div class="dot2"></div>
+                <div class="logo-container">
+                    <div class="logo-image"></div>
+                    <p>Yoga.<span>OMM</span></p>
                 </div>
             </div>
         </main>
         <footer>
-
+            <div class="footer-content">
+                <small class="copyright">Design: <span>by Freepik</span> Development: <span>Viktoriia Zhuravel</span></small>
+                <div class="social-container">
+                    <a href="https://www.facebook.com"><img src="./img/iconmonstr-facebook-5.svg" alt="facebook"></a>
+                    <a href="https://www.instagram.com"><img src="./img/iconmonstr-instagram-15.svg" alt="instagram"></a>
+                    <a href="mailto:vzhuravel.mmt-b2021@fh-salzburg.ac.at"><img src="./img/iconmonstr-gmail-5.svg" alt="mail"></a>
+                </div>
+            </div>
         </footer>
     </div>
+    <script src="./js/toggleMenuState.js"></script>
 </body>
 </html>
