@@ -94,6 +94,8 @@
 /*----------------------------------------------------------*/
     --index-background-image: url(../img/index_background.jpg);
     --logo-image: url(../img/logo_yoga_omm.svg);
+
+    --header-shadov-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
   }
 /*TODO create variables im em for shadov width*/
 
@@ -119,7 +121,7 @@ body {
     border-bottom: 1.875em solid var(--main-accent-color);
 }
 .content-wrapper {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), var(--index-background-image);
+    background: var(--header-shadov-gradient) ,var(--index-background-image);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -209,6 +211,16 @@ header {
     animation-name: menuMoveOut;
     animation-duration: 0.5s;
 }
+
+@keyframes menuMoveOut {
+    from {
+      right: -100%;
+    }
+    to {
+      right: 0%;
+    }
+}
+
 .mobile-menu::before {
     display: block;
     content: '';
@@ -409,8 +421,6 @@ header {
 footer {
     display: flex;
     flex-direction: column;
-
-    padding: 0em 1em;
 
     background: linear-gradient(to top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0));
 
