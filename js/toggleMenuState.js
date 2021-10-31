@@ -58,18 +58,22 @@ function addEventHandlers(){
     });
 
     addEvent(window, 'resize', () => {
-        let isMobile = window.innerWidth < 875;
-        if (isMobile) {
-            setupMobileControls();
-        }
-        else{
-            setupDesktopControls();
-        }
+        toggleMobileState();
     });
 
     addEvent(window, 'scroll', () => {
         removeClass('navigationId', 'mobile-menu');
     });
+}
+
+function toggleMobileState() {
+    let isMobile = window.innerWidth < 875;
+    if (isMobile) {
+        setupMobileControls();
+    }
+    else {
+        setupDesktopControls();
+    }
 }
 
 function setupMobileControls() {
@@ -82,4 +86,5 @@ function setupDesktopControls() {
 
 function init(){
     addEventHandlers();
+    toggleMobileState();
 };
