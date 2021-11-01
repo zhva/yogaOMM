@@ -43,7 +43,17 @@
     font-weight: normal;
     font-style: normal;
   }
-
+  @font-face {
+    font-family: 'Sacramento-Regular';
+    src: url('../font/Sacramento_Family/Sacramento-Regular.eot');
+    src: url('../font/Sacramento_Family/Sacramento-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../font/Sacramento_Family/Sacramento-Regular.svg#Sacramento-Regular') format('svg'),
+         url('../font/Sacramento_Family/Sacramento-Regular.ttf') format('truetype'),
+         url('../font/Sacramento_Family/Sacramento-Regular.woff') format('woff'),
+         url('../font/Sacramento_Family/Sacramento-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
 /*-----------------------------variables declaretion--------------------------------*/
 :root {
 
@@ -86,6 +96,7 @@
     --accent-font-family: "OpenSans-Bold";
     --text-font-family: "OpenSans-Regular";
     --menu-font-family: "Nunito-Bold";
+    --quotation-font-family: "Tangerine-Regular";
 
     --font-color: var(--main-accent-color);
 /*----------------------------------------------------------*/
@@ -113,7 +124,7 @@ body {
 
 }
 .content-container {
-    max-width: 1440px;
+   /* max-width: 1440px;*/
     width: 100%;
     margin: 0 auto;
 
@@ -124,6 +135,7 @@ body {
     background: var(--header-shadov-gradient) ,var(--index-background-image);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 
     height: max-content;
     padding: 5em 4em;
@@ -159,26 +171,27 @@ header {
 .logo-container p span {
     font-family: var(--accent-font-family);
 }
-.navigtion-container {
+.navigation-container {
     width: 65%;
+    max-width: 48em;
 }
-.navigtion-container ul {
+.navigation-container ul {
     display: flex;
     justify-items: center;
     justify-content: space-between;
 }
 
-.navigtion-container li {
+.navigation-container li {
     list-style-type: none;
     font-family: var(--menu-font-family);;
 
 }
-.navigtion-container li a {
+.navigation-container li a {
     text-decoration: none;
     font-size: 1.125em;
     color: var(--main-accent-color);
 }
-.navigtion-container li a:hover {
+.navigation-container li a:hover {
     color: var(--main-accent-color-hover);
 }
 .hidden {
@@ -562,8 +575,122 @@ footer {
     background-color: var(--main-accent-color-hover);
 }
 /*-----------------------------classes end--------------------------------------*/
+/*---------------------------contact start--------------------------------------*/
+.contact-content-container {
+    display: flex;
+    flex-direction: column;
+}
+.contact-content-image {
+    width: 100%;
+    height: 50vh;
+    background: var(--header-shadov-gradient), url(../img/contact-content-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.contact-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+    margin: 0 auto;
+    margin: 3em 5%;
+}
+.contact-content > div {
+    width: 40rem;
+}
+.contact-content > div p {
+    margin-bottom: 1.5em;
+}
+.contact-content .logo-container {
+    display: block;
+    text-align: center;
+    margin-top: 2em;
+
+    height: fit-content;
+}
+.contact-content .logo-container .logo-image,
+.contact-content .logo-container p {
+    display: inline-block;
+}
+.contact-content form {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1em 0;
+}
+
+.contact-content form label {
+    margin-bottom: 0.3em;
+    margin-top: 1em;
+}
+.contact-content form input {
+    height: 1em;
+}
+.contact-content form input {
+    padding: 0.8em 0.8em;
+}
+.contact-content form input {
+    border: 1px solid var(--main-accent-color-tr);
+    border-radius: 2px;
+
+    font-size: 0.8em;
+}
+.contact-content form input[type="submit"] {
+    align-self: flex-start;
+
+    font-size: 1em;
+
+    border-radius: 1em;
+    border: 0;
+
+    margin-top: 1.2em;
+    padding: 0.5em 2em;
+
+    height: 2.5em;
+}
+.contact-content form textarea {
+    padding: 0.5em;
+    height: 10ch;
+
+    font-size: 0.8em;
+}
+.contact-content .contact-quotation-container {
+    width: 90%;
+
+    margin-top: 3em;
+    position: relative;
+    height: 21.25em;
+}
+.contact-quotation-container p {
+    margin: 0 2em;
+}
+.contact-quotation-container q {
+    font-family: "Sacramento-Regular";
+    font-size: 2em;
+}
+
+.contact-quotation-container small {
+    float: right;
+    margin-right: 2em;
+}
+.slide {
+    position: absolute;
+    transition: all .7s ease-in;
+}
+
+.slide + .slide {
+    opacity: 0;
+}
+/*-----------------------------contact end--------------------------------------*/
+
+
+
 /*--------------------------media screen end------------------------------------*/
 @media screen and (min-width: 600px) {
+    .content-wrapper {
+        padding: 10em 4em;
+    }
 
     .outer-circle {
         width: var(--outer-circle-side-desctop);
@@ -661,8 +788,22 @@ footer {
         width: 25rem;
     }
 /*----------------------------classes end---------------------------------------*/
+
+/*----------------------------contact end---------------------------------------*/
+
+.contact-content .contact-quotation-container {
+    height: 16.875em;
+}
+
+/*----------------------------contact end---------------------------------------*/
   }
   @media screen and (min-width: 1024px) {
+/*----------------------------index start---------------------------------------*/      
+   .content-wrapper {
+        padding: 15em 4em;
+   }
+
+/*------------------------------index end---------------------------------------*/
 /*----------------------------classes start-------------------------------------*/
     .classes-content-heading {
         font-size: 2em;
@@ -673,5 +814,16 @@ footer {
         width: 20rem;
     }
 /*----------------------------classes end---------------------------------------*/
+/*----------------------------contact end---------------------------------------*/
+    .contact-content > div {
+        width: 30rem;
+    }
+    .contact-content .contact-quotation-container {
+        margin-top: 5em;
+    }
 
+    .contact-content .contact-quotation-container {
+        height: 10em;
+    }
+/*----------------------------contact end---------------------------------------*/
   }

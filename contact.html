@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Yoga world</title>
+</head>
+<body onload="init()">
+    <div class="content-container">
+        <header>
+            <div class="logo-container">
+                <div class="logo-image"></div>
+                <p>Yoga.<span>OMM</span></p>
+            </div>
+            <div class="navigation-container" id="navigationId">
+                <nav>
+                    <ul>
+                        <li class="home-icon"><span></span><a href="index.html">Home</a></li>
+                        <li class="yoga-icon"><span></span><a href="classes.html">Yoga classes</a></li>
+                        <li class="promo-icon"><span></span><a href="">Promo</a></li>
+                        <li class="online-icon"><span></span><a href="">Online classes</a></li>
+                        <li class="contact-icon"><span></span><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="contact-content-container">
+                <div class="contact-content-image"></div>
+                <div class="contact-content">
+                    <div>
+                        <h2>Contact us</h2>
+                        <p>If you have any questions about our yoga classes or just need more details, please contact us</p>
+                        <p>If you are not quite sure about what awaits you in our yoga classes, please contact us</p>
+                        <p>If you want to discuss any spiritual, mental and physical practices of yoga, please contact us </p>
+                        <p>If you want to learn more about the main areas of yoga: Raja Yoga, Karma Yoga, Jnana Yoga, Bhakti 
+                           Yoga and Hatha Yoga etc, please contact us</p>
+                        <p>If you would like to make a trial run with our classes, please contact us</p>
+                        <div class="logo-container">
+                            <div class="logo-image"></div>
+                            <p>Yoga.<span>OMM</span></p>
+                        </div>
+                    </div>
+                    <div>
+                        <form method="post">
+                            <label for="firstNameId">First Name*</label>
+                            <input type="text" name="first name" id="firstNameId" required x-autocompletetype="given-name">
+                            <label for="lastNameId">Last Name*</label>
+                            <input type="text" name="last name" id="lastNameId" required x-autocompletetype="surname">
+                            <label for="emailId">E-Mail*</label>
+                            <input type="email" name="email" id="emailId" required autocomplete="email">
+                            <label for="messageTopicId">Topic*</label>
+                            <input type="text" name="message topic" id="messageTopicId" required>
+                            <label for="messageTextId">Your message*</label>
+                            <textarea name="message" id="messageTextId" required></textarea>
+                            <input class="button-style" type="submit" value="Send">
+                        </form>
+                    </div>
+                    <div class="contact-quotation-container" id="quotesSlider">
+                        <div class="slide">
+                            <p><q>Yoga does not remove us from the reality of responsibilities of everyday life but rather places 
+                                our feet firmly and resolutely in the practical ground of experience</q></p>
+                         <small>by Donna Farhi, "The Little Red Book of Yoga Wisdom"</small>
+                        </div>
+                        <div class="slide">
+                            <p><q>Concentrating on poses clears the mind, while focusing on the breath helps the body shift out 
+                                  of fight or flight mode</q></p>
+                         <small>by Melanie Haiken, "The Little Red Book of Yoga Wisdom"</small>
+                        </div>
+                        <div class="slide">
+                            <p><q>The principle of Yoga is the turning of one or of all powers of our human existence into a means 
+                                  of reaching divine Being</q></p>
+                         <small>by Sri Aurobindo, "The Little Red Book of Yoga Wisdom"</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <small class="copyright">Design: <span>by Freepik</span> Development: <span>Viktoriia Zhuravel</span></small>
+                <div class="social-container">
+                    <a href="https://www.facebook.com"><img src="./img/iconmonstr-facebook-5.svg" alt="facebook"></a>
+                    <a href="https://www.instagram.com"><img src="./img/iconmonstr-instagram-15.svg" alt="instagram"></a>
+                    <a href="mailto:vzhuravel.mmt-b2021@fh-salzburg.ac.at"><img src="./img/iconmonstr-gmail-5.svg" alt="mail"></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="./js/toggleMenuState.js"></script>
+</body>
+</html>

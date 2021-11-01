@@ -84,7 +84,47 @@ function setupDesktopControls() {
     removeClass('navigationId', 'hidden');
 }
 
+
+/*-----------------------------------------------------------------------------------*/
+
+
+function showNextQuote(elemId) {
+    const element = document.getElementById(elemId);
+    if (element == null || typeof (element) === 'undefined') {
+        return;
+    }
+
+    var chilDivs = element.getElementsByClassName('slide');
+
+    for (let i = 0; i < chilDivs.length; i++) {
+        if (chilDivs[i].style.opacity == 1) {
+            let nextElemIndex = (i == chilDivs.length - 1) ? 0 : i + 1;
+            chilDivs[i].style.opacity = 0;
+            chilDivs[nextElemIndex].style.opacity = 1;
+            break;
+        }
+    }
+}
+
+function startSlider () {
+    const slider = document.getElementById('quotesSlider');
+    if (slider == null || typeof (slider) === 'undefined') {
+        return;
+    } 
+
+    var childSlides = slider.getElementsByClassName('slide');
+    for (let i = 0; i < childSlides.length; i++) {
+        childSlides[i].style.opacity = 0;
+    }
+    childSlides[0].style.opacity = 1;
+
+    setInterval(function() { showNextQuote('quotesSlider') }, 7000);
+}
+/*-----------------------------------------------------------------------------------*/
 function init(){
     addEventHandlers();
     toggleMobileState();
+    startSlider();  
 };
+
+
