@@ -48,10 +48,14 @@ function isElementHit(elementId, target) {
 
     return element.contains(target);
 }
-  
+
+let isMobileLayout;
 
 function addEventHandlers(){
     document.addEventListener('click', (event) => {
+        if (!isMobileLayout) {
+            return; 
+        }
         let isHamburgerMenuClicked = isElementHit('navigationId', event.target);
         toggleClass('navigationId', 'mobile-menu', isHamburgerMenuClicked);
 
@@ -67,8 +71,8 @@ function addEventHandlers(){
 }
 
 function toggleMobileState() {
-    let isMobile = window.innerWidth < 875;
-    if (isMobile) {
+    isMobileLayout = window.innerWidth < 875;
+    if (isMobileLayout) {
         setupMobileControls();
     }
     else {

@@ -62,6 +62,8 @@
     --small-circle-side-desctop: 0.875em;
     --small-circle-side-mobile: 0.75em;
 
+    --discount-circle-indent: -8%;
+
     --inner_circle_pos: calc((var(--outer_circle_side) - var(--inner_circle_side)) / 2);
 
 /*----------------------------------------------------------*/
@@ -106,7 +108,7 @@
     --index-background-image: url(../img/index_background.jpg);
     --logo-image: url(../img/logo_yoga_omm.svg);
 
-    --header-shadov-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    --header-shadov-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01), rgba(255, 255, 255, 0.01));
   }
 /*TODO create variables im em for shadov width*/
 
@@ -435,7 +437,7 @@ footer {
     display: flex;
     flex-direction: column;
 
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01), rgba(255, 255, 255, 0.01));
 
 }
 
@@ -656,7 +658,7 @@ footer {
     font-size: 0.8em;
 }
 .contact-content .contact-quotation-container {
-    width: 90%;
+    width: 100%;
 
     margin-top: 3em;
     position: relative;
@@ -683,9 +685,77 @@ footer {
     opacity: 0;
 }
 /*-----------------------------contact end--------------------------------------*/
+/*-----------------------------promo start--------------------------------------*/
+.promo-content-top {
+    background: url(../img/promo-content-background.jpg) no-repeat;
+    background-position-x: center;
+    background-position-y: top;
+    background-size: cover;
 
+    min-height: 71vw;
+}
+.discount-container {
+    display: inline-block;
+    position: relative;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    margin: 5%;
 
+    background-color: white;
+    background: url(../img/offer-back-image.png) no-repeat;
+    background-position: center;
+    background-size: cover;
 
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
+}
+
+.discount-container::before,
+.discount-container::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+.discount-container::before {
+    border: 1px solid var(--main-accent-color);
+    top: var(--discount-circle-indent);
+    bottom: var(--discount-circle-indent);
+    left: var(--discount-circle-indent);
+    right: var(--discount-circle-indent);
+}
+
+.discount-container::after {
+    border: 1px solid var(--main-accent-color-tr);
+    top: calc(var(--discount-circle-indent) * 2.2);
+    bottom: calc(var(--discount-circle-indent) * 2.2);
+    left: calc(var(--discount-circle-indent) * 2.2);
+    right: calc(var(--discount-circle-indent) * 2.2);
+}
+.promo-text-top {
+    margin-left: 7%;
+    width: 25%;
+    min-width: 30ch;
+
+    padding: 2.5em 0em;
+
+    font-size: 0.8em;
+    color: white;
+}
+.promo-text-top h1 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+.promo-text-top span {
+    display: block;
+
+    font-family: var(--main-font-family);
+    font-weight: 500;
+}
+.promo-date {
+    margin: 0em;
+}
+/*------------------------------promo end---------------------------------------*/
 /*--------------------------media screen end------------------------------------*/
 @media screen and (min-width: 600px) {
     .content-wrapper {
@@ -745,7 +815,7 @@ footer {
         left: calc((var(--outer-circle-side-desctop) - var(--small-circle-side-desctop))/ 2)
     }
     .dot1 {
-        top: calc(0px - (1em + 1px + var(var(--small-circle-side-desctop)) / 2));
+        top: calc(0px - (1em + 1px + var(--small-circle-side-desctop) / 2))
     }
     .dot2 {
         top: calc(calc(1em + 1px + var(--outer-circle-side-desctop) - var(--small-circle-side-desctop) / 2));
@@ -791,12 +861,19 @@ footer {
 
 /*----------------------------contact end---------------------------------------*/
 
-.contact-content .contact-quotation-container {
-    height: 16.875em;
-}
+    .contact-content .contact-quotation-container {
+        width: 85%;
+        height: 16.875em;
+    }
 
 /*----------------------------contact end---------------------------------------*/
-  }
+/*----------------------------promo start---------------------------------------*/
+.promo-text-top {
+    font-size: 0.9em;
+}
+/*------------------------------promo end---------------------------------------*/
+
+}
   @media screen and (min-width: 1024px) {
 /*----------------------------index start---------------------------------------*/      
    .content-wrapper {
@@ -820,10 +897,21 @@ footer {
     }
     .contact-content .contact-quotation-container {
         margin-top: 5em;
-    }
 
-    .contact-content .contact-quotation-container {
+        width: 75%;
         height: 10em;
     }
+
 /*----------------------------contact end---------------------------------------*/
+/*----------------------------promo start---------------------------------------*/
+    .promo-content-top {
+        margin: 0 auto;
+    }
+    .promo-text-top {
+        font-size: 1em;
+    }
+    .promo-text-top h1 {
+        font-size: 2em;
+    }
+/*------------------------------promo end---------------------------------------*/
   }
