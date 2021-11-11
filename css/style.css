@@ -69,7 +69,7 @@
 /*----------------------------------------------------------*/
 
     --main-accent-color: #7d5984;
-    --main-accent-color-hover: #9578a5;
+    --main-accent-color-hover: #9678a6;
     --main-accent-color-tr: #7d598491;
     --second-accent-color: #d5dcdc;
     --second-accent-color-tr: #d5dcdc91;
@@ -107,8 +107,8 @@
 /*----------------------------------------------------------*/
     --index-background-image: url(../img/index_background.jpg);
     --logo-image: url(../img/logo_yoga_omm.svg);
-
-    --header-shadov-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.01), rgba(255, 255, 255, 0.01));
+    
+    --header-shadov-gradient: linear-gradient(to bottom, rgba(150, 150, 150, 0.1), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.01));
   }
 /*TODO create variables im em for shadov width*/
 
@@ -126,11 +126,9 @@ body {
 
 }
 .content-container {
-   /* max-width: 1440px;*/
     width: 100%;
     margin: 0 auto;
 
-    border-top: 0.625em solid var(--main-accent-color);
     border-bottom: 1.875em solid var(--main-accent-color);
 }
 .content-wrapper {
@@ -152,12 +150,10 @@ header {
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-
 }
+
 .logo-container {
     height: 80%;
-    display: flex;
-    align-items: center;
 }
 
 .logo-image {
@@ -167,8 +163,16 @@ header {
     width: 3em;
     height: 3em;
 }
+.logo-container a {
+    text-decoration: none;
+    color: var(--main-accent-color);
+
+    display: flex;
+    align-items: center;
+}
 .logo-container p {
     align-self: flex-end;
+    margin: 0;
 }
 .logo-container p span {
     font-family: var(--accent-font-family);
@@ -176,25 +180,32 @@ header {
 .navigation-container {
     width: 65%;
     max-width: 48em;
+
 }
+
 .navigation-container ul {
     display: flex;
     justify-items: center;
     justify-content: space-between;
+
+    margin: 0;
 }
 
 .navigation-container li {
     list-style-type: none;
-    font-family: var(--menu-font-family);;
-
+    font-family: var(--menu-font-family);
 }
+
 .navigation-container li a {
     text-decoration: none;
     font-size: 1.125em;
     color: var(--main-accent-color);
 }
+
+.navigation-container .active,
 .navigation-container li a:hover {
     color: var(--main-accent-color-hover);
+    border-bottom: 1px solid var(--main-accent-color-hover);
 }
 .hidden {
     width: 25px;
@@ -216,7 +227,7 @@ header {
     position: absolute;
     right: 0;
     top: 0;
-    width: 70%;
+    width: 60%;
     max-width: 400px;
     z-index: 99;
     height: 100vh;
@@ -332,7 +343,7 @@ header {
                     var(--circle-shadow-1-mobile),
                     var(--circle-shadow-2-mobile),
                     var(--circle-shadow-3-mobile),
-                    var(--circle-shadow-pulse-mobile)
+                    var(--circle-shadow-pulse-mobile);
     }
     100%
     {
@@ -505,7 +516,7 @@ footer {
     text-transform: uppercase;
     margin-top: 0;
 
-    font-size: 1em;
+    font-size: 1.2em;
 }
 .classes-content-heading span {
     font-family: var(--main-font-family);
@@ -521,14 +532,14 @@ footer {
 }
 
 .classes-content > div {
-    width: 30rem;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
 }
 .classes-content h2 {
     text-align: left;
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 .classes-content img {
     border-radius: 50%;
@@ -571,7 +582,7 @@ footer {
 .classes-content-shown {
     max-height: 125em;
     overflow: hidden;
-    transition: 0.5s ease;
+    transition: 1s ease;
 }
 .button-style:hover {
     background-color: var(--main-accent-color-hover);
@@ -593,10 +604,13 @@ footer {
 .contact-content {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
 
-    margin: 0 auto;
     margin: 3em 5%;
+}
+.contact-content h2 {
+    font-size: 1.2em;
+    text-transform: uppercase;
 }
 .contact-content > div {
     width: 40rem;
@@ -621,7 +635,9 @@ footer {
 
     padding: 1em 0;
 }
-
+textarea[id="messageTextId"] {
+    resize: none;
+}
 .contact-content form label {
     margin-bottom: 0.3em;
     margin-top: 1em;
@@ -687,7 +703,7 @@ footer {
 /*-----------------------------contact end--------------------------------------*/
 /*-----------------------------promo start--------------------------------------*/
 .promo-content-top {
-    background: url(../img/promo-content-background.jpg) no-repeat;
+    background:var(--header-shadov-gradient), url(../img/promo-content-background.jpg) no-repeat;
     background-position-x: center;
     background-position-y: top;
     background-size: cover;
@@ -696,47 +712,52 @@ footer {
 }
 .discount-container {
     display: inline-block;
-    position: relative;
     width: 15vw;
     height: 15vw;
-    border-radius: 50%;
     margin: 5%;
 
     background-color: white;
     background: url(../img/offer-back-image.png) no-repeat;
     background-position: center;
     background-size: cover;
-
-    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
+}
+.circles-with-shadow {
+    position: relative;
+    border-radius: 50%;
+    box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.2);
 }
 
-.discount-container::before,
-.discount-container::after {
+
+.circles-with-shadow::before,
+.circles-with-shadow::after {
     content: "";
     position: absolute;
     border-radius: 50%;
 }
-.discount-container::before {
+
+
+.circles-with-shadow::before {
     border: 1px solid var(--main-accent-color);
     top: var(--discount-circle-indent);
     bottom: var(--discount-circle-indent);
     left: var(--discount-circle-indent);
     right: var(--discount-circle-indent);
 }
-
-.discount-container::after {
+.circles-with-shadow::after {
     border: 1px solid var(--main-accent-color-tr);
     top: calc(var(--discount-circle-indent) * 2.2);
     bottom: calc(var(--discount-circle-indent) * 2.2);
     left: calc(var(--discount-circle-indent) * 2.2);
     right: calc(var(--discount-circle-indent) * 2.2);
+
 }
+
 .promo-text-top {
     margin-left: 7%;
     width: 25%;
     min-width: 30ch;
 
-    padding: 2.5em 0em;
+    padding: 1.5em 0em;
 
     font-size: 0.8em;
     color: white;
@@ -753,9 +774,148 @@ footer {
     font-weight: 500;
 }
 .promo-date {
-    margin: 0em;
+    margin: 0;
+}
+.promo-content-middle {
+    padding: 5%;
+}
+.promo-bonus-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    text-align: center;
+    width: 100%;
+}
+.promo-bonus-content > div {
+    margin-bottom: 1.5em;
+}
+.promo-content-middle-heading {
+    margin-bottom: 3em;
+
+    text-align: center;
+    text-transform: uppercase;
+}
+.promo-content-middle-heading h2 {
+    margin: 0;
+
+    font-size: 1.2em;
+}
+.promo-content-middle-heading span {
+    display: block;
+    font-weight: 500;
+}
+.promo-img-icon {
+    text-align: center;
+    border-radius: 50%;  
+}
+
+.promo-img-icon img {
+    border-radius: 50%;
+    box-shadow: 0px -3px 4px 2px rgba(0, 0, 0, 0.1);
+
+    transition: transform 1s ease;
+}
+
+.promo-img-icon img:hover {
+    transform: translateX( -1px ) rotateY( 180deg );
 }
 /*------------------------------promo end---------------------------------------*/
+/*----------------------------online start--------------------------------------*/
+
+.online-content-container {
+    background: var(--header-shadov-gradient);
+    padding: 0% 5%;
+}
+.online-content-heading {
+    background: url(../img/classes-h1-background.png) no-repeat;
+    background-position-x: center;
+    background-position-y: top;
+    background-size: contain;
+    padding: 1em 0;
+}
+.online-content-heading h1 {
+    text-align: center;
+    text-transform: uppercase;
+
+    margin-top: 0;
+
+    font-size: 1.2em;
+}
+.online-content-heading h1 span {
+    display: block;
+
+    font-family: var(--main-font-family);
+    font-weight: 500;
+}
+.yoga-class-conent-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.yoga-class-conent-container:last-of-type {
+    flex-direction: row-reverse;
+}
+.yoga-class-conent {
+    width: 40rem;
+    margin-bottom: 2em;
+}
+.class-info {
+    display: flex;
+    flex-flow: row;
+    gap: 4em;
+}
+.class-modules {
+    margin-bottom: 1.5em;
+}
+.class-modules p,
+.yoga-class-conent div p {
+    margin: 0;
+}
+.yoga-class-conent h2 {
+    font-size: 1.1em;
+}
+.yoga-class-conent h3 {
+    font-size: 1em;
+}
+.yoga-class-conent h2,
+.yoga-class-conent h3 {
+    text-transform: uppercase;
+}
+.yoga-class-conent h2 span,
+.yoga-class-conent h3 span {
+    font-family: var(--main-font-family);
+    font-weight: 500;
+}
+.yoga-class-conent > p:first-of-type {
+    border-bottom: 1px solid;
+    padding-bottom: 1.5em;
+}
+.online-image-container {
+    padding: 5% 0%;
+} 
+.online-image-container div {
+    width: 70%;
+    margin: 15%;
+}
+.online-image-container img {
+    border-radius: 50%;
+    width: 90%;
+    padding: 5%;
+}
+
+.yoga-class-conent-container:nth-of-type(2) .online-image-container p {
+    float: right;
+}
+.yoga-class-conent-container:last-of-type .online-image-container p {
+    margin-left: 0;
+}
+.online-image-container p {
+    text-transform: uppercase;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    margin-top: 10%;
+}
+/*-----------------------------online end---------------------------------------*/
 /*--------------------------media screen end------------------------------------*/
 @media screen and (min-width: 600px) {
     .content-wrapper {
@@ -830,7 +990,6 @@ footer {
         margin: 0.75em 0;
     }
     .circle-content p {
-        white-space: wrap;
         text-overflow: unset;
         white-space: break-spaces;
 
@@ -854,8 +1013,8 @@ footer {
 
         padding: 1.2em 0;
     }
-    .classes-content > div {
-        width: 25rem;
+    .classes-content h2 {
+        font-size: 1.2em;
     }
 /*----------------------------classes end---------------------------------------*/
 
@@ -870,6 +1029,10 @@ footer {
 /*----------------------------promo start---------------------------------------*/
 .promo-text-top {
     font-size: 0.9em;
+    padding: 2em 0;
+}
+.promo-text-top h1 {
+    font-size: 1.6em;
 }
 /*------------------------------promo end---------------------------------------*/
 
@@ -883,9 +1046,11 @@ footer {
 /*------------------------------index end---------------------------------------*/
 /*----------------------------classes start-------------------------------------*/
     .classes-content-heading {
-        font-size: 2em;
-
         padding: 1.5em 0;
+    }
+
+    .classes-content-heading h1 {
+        font-size: 1.5em;
     }
     .classes-content > div {
         width: 20rem;
@@ -893,7 +1058,10 @@ footer {
 /*----------------------------classes end---------------------------------------*/
 /*----------------------------contact end---------------------------------------*/
     .contact-content > div {
-        width: 30rem;
+        width: 25rem;
+    }
+    .contact-content h2 {
+        font-size: 1.5em;
     }
     .contact-content .contact-quotation-container {
         margin-top: 5em;
@@ -909,9 +1077,32 @@ footer {
     }
     .promo-text-top {
         font-size: 1em;
+        padding: 2.5em 0;
     }
     .promo-text-top h1 {
         font-size: 2em;
     }
+    .promo-bonus-content div {
+        width: 20rem;
+    }
+
+    .promo-content-middle-heading h2 {
+        font-size: 2em;
+    }
 /*------------------------------promo end---------------------------------------*/
+/*----------------------------online start--------------------------------------*/
+.online-content-heading {
+    padding: 1.8em 0;
+}
+
+.online-content-heading h1 {
+    font-size: 1.8em;
+}
+.yoga-class-conent h2 {
+    font-size: 1.5em;
+}
+.yoga-class-conent h3 {
+    font-size: 1.4em;
+}
+/*-----------------------------online end---------------------------------------*/
   }
